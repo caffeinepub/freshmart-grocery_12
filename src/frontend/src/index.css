@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    /* Primary green #1B7A2E → oklch(0.48 0.14 148) */
+    --primary: 0.48 0.14 148;
+    --primary-foreground: 1 0 0;
+    /* Dark green #166A28 → oklch(0.43 0.13 148) */
+    --primary-dark: 0.43 0.13 148;
+    /* Background #F2F5F2 → oklch(0.96 0.01 148) */
+    --background: 0.96 0.01 148;
+    /* Card #FFFFFF */
+    --card: 1 0 0;
+    --card-foreground: 0.19 0.02 264;
+    --popover: 1 0 0;
+    --popover-foreground: 0.19 0.02 264;
+    /* Text #111827 */
+    --foreground: 0.19 0.02 264;
+    /* Secondary text #6B7280 */
+    --secondary: 0.97 0.01 148;
+    --secondary-foreground: 0.19 0.02 264;
+    --muted: 0.96 0.01 148;
+    --muted-foreground: 0.52 0.02 264;
+    --accent: 0.94 0.02 148;
+    --accent-foreground: 0.19 0.02 264;
+    /* Destructive red #D32F2F → oklch(0.48 0.20 27) */
+    --destructive: 0.48 0.2 27;
+    --destructive-foreground: 1 0 0;
+    /* Border #E5E7EB → oklch(0.92 0.01 264) */
+    --border: 0.92 0.01 264;
+    --input: 0.92 0.01 264;
+    --ring: 0.48 0.14 148;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 1 0 0;
+    --sidebar-foreground: 0.19 0.02 264;
+    --sidebar-primary: 0.48 0.14 148;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.94 0.02 148;
+    --sidebar-accent-foreground: 0.19 0.02 264;
+    --sidebar-border: 0.92 0.01 264;
+    --sidebar-ring: 0.48 0.14 148;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@keyframes badge-bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+.badge-bounce {
+  animation: badge-bounce 0.3s ease;
+}
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  animation: slide-in-right 0.3s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fade-in 0.4s ease;
+}
